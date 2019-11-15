@@ -11,15 +11,15 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="logout"
-            android:id="@+id/logout"
+            android:text="Contacts"
+            android:id="@+id/contacts"
             />
 
         <Button
-            android:id="@+id/contacts"
+            android:id="@+id/logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Contacts" />
+            android:text="Logout" />
 
     </LinearLayout>
 

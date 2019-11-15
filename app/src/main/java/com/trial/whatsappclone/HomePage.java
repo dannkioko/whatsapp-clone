@@ -2,6 +2,7 @@ package com.trial.whatsappclone;
 
 import androidx.annotation.RequiresPermission;
 import androidx.appcompat.app.AppCompatActivity;
+import android.Manifest;
 
 import android.Manifest;
 import android.content.Intent;
@@ -23,6 +24,7 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
         logout = findViewById(R.id.logout);
+        contacts = findViewById(R.id.contacts);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,7 +46,7 @@ public class HomePage extends AppCompatActivity {
     }
     private void getPermissions() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            requestPermissions(new String[]Manifest.permission.WRITE_CONTACTS, Manifest.permission.READ_CONTACTS);
+            requestPermissions(new String[] {Manifest.permission.WRITE_CONTACTS, Manifest.permission.READ_CONTACTS}, 1);
         }
     }
 }

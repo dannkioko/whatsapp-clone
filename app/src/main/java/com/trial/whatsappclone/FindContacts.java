@@ -37,7 +37,7 @@ public class FindContacts extends AppCompatActivity {
         }
     }
     private void initRecyclerView() {
-        userList = findViewById(R.id.contactslist);
+        userList = (RecyclerView) findViewById(R.id.contactslist);
         userList.setNestedScrollingEnabled(false);
         userList.setHasFixedSize(false);
         userListLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayout.VERTICAL, false);
