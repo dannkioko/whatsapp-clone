@@ -4,12 +4,12 @@ import 'package:whatsappclone/screens/camera_screen.dart';
 import 'package:whatsappclone/screens/chats_screen.dart';
 import 'package:whatsappclone/screens/status_screen.dart';
 
-class WhatsAppHome extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  _WhatsAppHomeState createState() => _WhatsAppHomeState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _WhatsAppHomeState extends State<WhatsAppHome>
+class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
   @override
