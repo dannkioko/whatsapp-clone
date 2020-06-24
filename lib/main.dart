@@ -1,18 +1,28 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsappclone/screens/home_screen.dart';
+import 'package:whatsappclone/screens/login/login_screen.dart';
 
-void main() => runApp(new MyApp());
+List<CameraDescription> cameras;
 
-class MyApp extends StatelessWidget {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  cameras = await availableCameras();
+
+  runApp(MyApp());}
+  
+  class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-        title: "WhatsApp",
-        theme: ThemeData(
-          accentColor: Color(0xff25D366),
-          primaryColor: Color(0xff075E54),
-        ),
-        home: HomeScreen(),);
-  }
+    debugShowCheckedModeBanner: false,
+    title: "WhatsApp",
+    theme: ThemeData(
+      accentColor: Color(0xff25D366),
+      primaryColor: Color(0xff075E54),
+    ),
+    home:LoginScreen(cameras),
+    // home: HomeScreen(cameras),
+  );
 }
+  }
