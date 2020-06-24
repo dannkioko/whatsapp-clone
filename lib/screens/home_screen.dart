@@ -1,10 +1,14 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsappclone/screens/calls_screen.dart';
 import 'package:whatsappclone/screens/camera_screen.dart';
-import 'package:whatsappclone/screens/chats_screen.dart';
+import 'package:whatsappclone/screens/chats/chats_screen.dart';
 import 'package:whatsappclone/screens/status_screen.dart';
 
 class HomeScreen extends StatefulWidget {
+  final List<CameraDescription> camera;
+
+  HomeScreen(this.camera);
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -44,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen>
       body: TabBarView(
         controller: _tabController,
         children: <Widget>[
-          CameraScreen(),
+          CameraScreen(widget.camera),
           ChatsScreen(),
           StatusScreen(),
           CallsScreen(),
