@@ -1,6 +1,5 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:whatsappclone/screens/home_screen.dart';
 import 'package:whatsappclone/screens/login/login_screen.dart';
 
 List<CameraDescription> cameras;
@@ -8,6 +7,7 @@ List<CameraDescription> cameras;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   cameras = await availableCameras();
+
 
   runApp(MyApp());}
   
@@ -18,9 +18,8 @@ Future<void> main() async {
     debugShowCheckedModeBanner: false,
     title: "WhatsApp",
     theme: ThemeData(
-      accentColor: Color(0xff25D366),
-      primaryColor: Color(0xff075E54),
-    ),
+      colorScheme: ColorScheme.light(primary: Color(0xff075E54), secondary: Color(0xff25D366)),
+    ),   
     home:LoginScreen(cameras),
     // home: HomeScreen(cameras),
   );

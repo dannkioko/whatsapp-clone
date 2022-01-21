@@ -21,7 +21,7 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
               controller: mycontroller,
               decoration: InputDecoration(),
             ),
-            FlatButton(
+            TextButton(
               child: Text("Get Code"),
               onPressed: () => _verifyPhoneNumber(),
             )
@@ -54,7 +54,7 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
         .then((authResult) {
       final snackBar =
           SnackBar(content: Text("Success!!! UUID is: " + authResult.user.uid));
-      Scaffold.of(context).showSnackBar(snackBar);
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
     });
   }
 
@@ -67,7 +67,7 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
     final snackBar = SnackBar(
         content:
             Text("Exception!! message:" + authException.message.toString()));
-    Scaffold.of(context).showSnackBar(snackBar);
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 
   _codeAutoRetrievalTimeout(String verificationId) {

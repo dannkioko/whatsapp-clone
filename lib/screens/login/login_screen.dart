@@ -2,7 +2,6 @@ import 'package:camera/camera.dart';
 import "package:flutter/material.dart";
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
-import 'package:whatsappclone/screens/chats/chats_screen.dart';
 import 'package:whatsappclone/screens/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -74,7 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             contentPadding: EdgeInsets.all(10),
             actions: <Widget>[
-              FlatButton(
+              TextButton(
                 child: Text('Done'),
                 onPressed: () {
                   _auth.currentUser().then((user) {
@@ -205,8 +204,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   height: 10.0,
                 ),
-                FlatButton(
-                  color: Colors.blueGrey,
+                TextButton(
+                  style: TextButton.styleFrom(primary: Colors.blueGrey),
                   child: Text("Get Code"),
                   onPressed: () {
                     verifyPhone();

@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen>
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Theme.of(context).accentColor,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         child: Icon(
           Icons.message,
           color: Colors.white,
